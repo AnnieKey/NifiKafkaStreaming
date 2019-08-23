@@ -2,16 +2,16 @@
 <template encoding-version="1.2">
     <description></description>
     <groupId>ba46f085-016c-1000-66db-b162f660ab4e</groupId>
-    <name>NifiKafka</name>
+    <name>NifiKafkaIntegration</name>
     <snippet>
         <connections>
-            <id>63256e03-3b66-3d41-0000-000000000000</id>
+            <id>8eacef85-f416-31ed-0000-000000000000</id>
             <parentGroupId>cabd2854-9f11-3bbf-0000-000000000000</parentGroupId>
             <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
             <backPressureObjectThreshold>10000</backPressureObjectThreshold>
             <destination>
                 <groupId>cabd2854-9f11-3bbf-0000-000000000000</groupId>
-                <id>e96e69ff-2ef1-38bd-0000-000000000000</id>
+                <id>b3c534e9-c0f6-386d-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </destination>
             <flowFileExpiration>0 sec</flowFileExpiration>
@@ -25,31 +25,6 @@
             <source>
                 <groupId>cabd2854-9f11-3bbf-0000-000000000000</groupId>
                 <id>9a475923-a147-3a87-0000-000000000000</id>
-                <type>PROCESSOR</type>
-            </source>
-            <zIndex>0</zIndex>
-        </connections>
-        <connections>
-            <id>64165d35-e79c-352a-0000-000000000000</id>
-            <parentGroupId>cabd2854-9f11-3bbf-0000-000000000000</parentGroupId>
-            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
-            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
-            <destination>
-                <groupId>cabd2854-9f11-3bbf-0000-000000000000</groupId>
-                <id>aa405344-17d1-3f16-0000-000000000000</id>
-                <type>PROCESSOR</type>
-            </destination>
-            <flowFileExpiration>0 sec</flowFileExpiration>
-            <labelIndex>1</labelIndex>
-            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
-            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
-            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
-            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
-            <name></name>
-            <selectedRelationships>success</selectedRelationships>
-            <source>
-                <groupId>cabd2854-9f11-3bbf-0000-000000000000</groupId>
-                <id>e96e69ff-2ef1-38bd-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </source>
             <zIndex>0</zIndex>
@@ -75,6 +50,31 @@
             <source>
                 <groupId>cabd2854-9f11-3bbf-0000-000000000000</groupId>
                 <id>a3c91082-79d6-37e5-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>cc0a7097-611c-3638-0000-000000000000</id>
+            <parentGroupId>cabd2854-9f11-3bbf-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>cabd2854-9f11-3bbf-0000-000000000000</groupId>
+                <id>aa405344-17d1-3f16-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>splits</selectedRelationships>
+            <source>
+                <groupId>cabd2854-9f11-3bbf-0000-000000000000</groupId>
+                <id>b3c534e9-c0f6-386d-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </source>
             <zIndex>0</zIndex>
@@ -409,8 +409,8 @@
             <id>9a475923-a147-3a87-0000-000000000000</id>
             <parentGroupId>cabd2854-9f11-3bbf-0000-000000000000</parentGroupId>
             <position>
-                <x>0.0</x>
-                <y>240.0</y>
+                <x>17.0</x>
+                <y>276.0</y>
             </position>
             <bundle>
                 <artifact>nifi-update-attribute-nar</artifact>
@@ -505,7 +505,7 @@
             <id>a3c91082-79d6-37e5-0000-000000000000</id>
             <parentGroupId>cabd2854-9f11-3bbf-0000-000000000000</parentGroupId>
             <position>
-                <x>112.0</x>
+                <x>0.0</x>
                 <y>0.0</y>
             </position>
             <bundle>
@@ -628,8 +628,8 @@
             <id>aa405344-17d1-3f16-0000-000000000000</id>
             <parentGroupId>cabd2854-9f11-3bbf-0000-000000000000</parentGroupId>
             <position>
-                <x>709.0</x>
-                <y>40.99999237060547</y>
+                <x>727.0</x>
+                <y>222.0</y>
             </position>
             <bundle>
                 <artifact>nifi-kafka-0-9-nar</artifact>
@@ -799,16 +799,16 @@
                 <autoTerminate>true</autoTerminate>
                 <name>success</name>
             </relationships>
-            <state>STOPPED</state>
+            <state>RUNNING</state>
             <style/>
             <type>org.apache.nifi.processors.kafka.pubsub.PublishKafka</type>
         </processors>
         <processors>
-            <id>e96e69ff-2ef1-38bd-0000-000000000000</id>
+            <id>b3c534e9-c0f6-386d-0000-000000000000</id>
             <parentGroupId>cabd2854-9f11-3bbf-0000-000000000000</parentGroupId>
             <position>
-                <x>505.80501099255343</x>
-                <y>456.97704058485306</y>
+                <x>405.2027653094465</x>
+                <y>545.1263477240639</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -821,29 +821,23 @@
                 <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
                 <descriptors>
                     <entry>
-                        <key>record-reader</key>
+                        <key>Record Reader</key>
                         <value>
                             <identifiesControllerService>org.apache.nifi.serialization.RecordReaderFactory</identifiesControllerService>
-                            <name>record-reader</name>
+                            <name>Record Reader</name>
                         </value>
                     </entry>
                     <entry>
-                        <key>record-writer</key>
+                        <key>Record Writer</key>
                         <value>
                             <identifiesControllerService>org.apache.nifi.serialization.RecordSetWriterFactory</identifiesControllerService>
-                            <name>record-writer</name>
+                            <name>Record Writer</name>
                         </value>
                     </entry>
                     <entry>
-                        <key>replacement-value-strategy</key>
+                        <key>Records Per Split</key>
                         <value>
-                            <name>replacement-value-strategy</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>/timestamp_ms</key>
-                        <value>
-                            <name>/timestamp_ms</name>
+                            <name>Records Per Split</name>
                         </value>
                     </entry>
                 </descriptors>
@@ -852,20 +846,16 @@
                 <penaltyDuration>30 sec</penaltyDuration>
                 <properties>
                     <entry>
-                        <key>record-reader</key>
+                        <key>Record Reader</key>
                         <value>c93ae86f-8f39-3a52-0000-000000000000</value>
                     </entry>
                     <entry>
-                        <key>record-writer</key>
+                        <key>Record Writer</key>
                         <value>69208e51-e77d-3453-0000-000000000000</value>
                     </entry>
                     <entry>
-                        <key>replacement-value-strategy</key>
-                        <value>literal-value</value>
-                    </entry>
-                    <entry>
-                        <key>/timestamp_ms</key>
-                        <value>${timestamp}</value>
+                        <key>Records Per Split</key>
+                        <value>100</value>
                     </entry>
                 </properties>
                 <runDurationMillis>0</runDurationMillis>
@@ -874,19 +864,23 @@
                 <yieldDuration>1 sec</yieldDuration>
             </config>
             <executionNodeRestricted>false</executionNodeRestricted>
-            <name>UpdateRecord</name>
+            <name>SplitRecord</name>
             <relationships>
                 <autoTerminate>true</autoTerminate>
                 <name>failure</name>
             </relationships>
             <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>original</name>
+            </relationships>
+            <relationships>
                 <autoTerminate>false</autoTerminate>
-                <name>success</name>
+                <name>splits</name>
             </relationships>
             <state>RUNNING</state>
             <style/>
-            <type>org.apache.nifi.processors.standard.UpdateRecord</type>
+            <type>org.apache.nifi.processors.standard.SplitRecord</type>
         </processors>
     </snippet>
-    <timestamp>08/23/2019 10:51:45 UTC</timestamp>
+    <timestamp>08/23/2019 07:58:14 UTC</timestamp>
 </template>
